@@ -1,0 +1,11 @@
+express: framework web
+cors: libera requisições de outros sites
+
+zod: validação de dados
+
+bcrypt: criptografia de senha
+
+@prisma/client: ORM para banco de dados
+
+prisma: ferramenta para gerar e configurar banco (dev dependency)
+
