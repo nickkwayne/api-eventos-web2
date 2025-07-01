@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar Evento - Litoral Meet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <h1>LITORAL MEET</h1>
+      <nav class="cidades">
+        <button>Caraguatatuba</button>
+        <button>São Sebastião</button>
+        <button>Ilhabela</button>
+        <button>Ubatuba</button>
+      </nav>
+      <div>
+        <button class="login">Login</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <h2>Criar Novo Evento</h2>
+    
+    <form id="eventoForm" class="evento-form">
+      <div class="form-grupo">
+        <label for="nome">Nome do Evento*</label>
+        <input type="text" id="nome" required placeholder="Ex: Festival de Verão">
+      </div>
+      
+      <div class="form-grupo">
+        <label for="data">Data*</label>
+        <input type="date" id="data" required>
+      </div>
+      
+      <div class="form-grupo">
+        <label for="horario">Horário*</label>
+        <input type="time" id="horario" required>
+      </div>
+      
+      <div class="form-grupo">
+        <label for="local">Local*</label>
+        <input type="text" id="local" required placeholder="Ex: Praia Grande">
+      </div>
+      
+      <div class="form-grupo">
+        <label for="cidade">Cidade*</label>
+        <select id="cidade" required>
+          <option value="">Selecione</option>
+          <option value="Caraguatatuba">Caraguatatuba</option>
+          <option value="São Sebastião">São Sebastião</option>
+          <option value="Ilhabela">Ilhabela</option>
+          <option value="Ubatuba">Ubatuba</option>
+        </select>
+      </div>
+      
+      <div class="form-grupo">
+        <label for="tipo">Tipo de Evento*</label>
+        <select id="tipo" required>
+          <option value="">Selecione</option>
+          <option value="Pago">Pago</option>
+          <option value="Gratis">Grátis</option>
+        </select>
+      </div>
+      
+      <div class="form-grupo">
+        <label for="descricao">Descrição</label>
+        <textarea id="descricao" rows="4" placeholder="Detalhes sobre o evento"></textarea>
+      </div>
+      
+      <div class="form-acao">
+        <button type="submit" class="submit-botao">Criar Evento</button>
+        <button type="button" class="cancelar-botao">Cancelar</button>
+      </div>
+    </form>
+  </div>
+
+  <footer>
+    <p>© 2025 Litoral Meet - Termos de Uso - Política de Privacidade</p>
+  </footer>
+</body>
+</html>
+
+<!--teste-->

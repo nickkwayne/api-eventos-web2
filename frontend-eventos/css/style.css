@@ -224,6 +224,7 @@ footer {
   display: none;
 }
 
+<<<<<<< HEAD:frontend-eventos/css/style.css
 
 /* cadastro botões especificos*/
 
@@ -239,3 +240,153 @@ select {
   font-size: 16px;
   margin-bottom: 12px;
 }
+=======
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f1f5f9;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(to right, #0097a7, #00796b);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.cidades button,
+.login {
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  margin: 0 5px;
+  padding: 8px 16px;
+  font-weight: bold;
+  color: #00796b;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.cidades button:hover,
+.login:hover {
+  background-color: #e0f2f1;
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cidades {
+  display: flex;
+  gap: 8px;
+}
+
+.main-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.main-container h2 {
+  color: #00796b;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.evento-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-grupo {
+  margin-bottom: 20px;
+}
+
+.form-grupo label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #00796b;
+}
+
+.form-grupo input,
+.form-grupo select,
+.form-grupo textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.form-grupo textarea {
+  resize: vertical;
+}
+
+.form-acao {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.submit-botao {
+  background: linear-gradient(to right, #0097a7, #00796b);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.submit-botao:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.cancelar-botao {
+  background-color: #f5f5f5;
+  color: #666;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.cancelar-botao:hover {
+  background-color: #e0e0e0;
+}
+
+footer {
+  background: linear-gradient(to right, #0097a7, #00796b);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  margin-top: 50px;
+}
+>>>>>>> 4694a96fad2c5697155040f60eaa93f9af635adc:frontend/style.css
