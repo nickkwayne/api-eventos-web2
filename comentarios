@@ -9,3 +9,5 @@ bcrypt: criptografia de senha
 
 prisma: ferramenta para gerar e configurar banco (dev dependency)
 
+npx prisma init > inicia o prisma com .env gitignore
+

@@ -17,7 +17,8 @@ export async function create(enterprise) {
             id: true,
             name: true,
             cnpj: true,
-            email: true
+            email: true,
+            pass: true
 
         }
     });

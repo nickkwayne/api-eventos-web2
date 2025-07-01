@@ -14,43 +14,44 @@ datasource db {
 }
 
 model users {
-  id        Int      @id @default(autoincrement())
-  cpf       String   @db.Char(11)
-  name      String   @db.VarChar(100)
-  email     String   @unique(map:"email") @db.VarChar(255)
-  pass      String   @db.VarChar(255)
-  sexo      String   @db.Char(1)
-  groups    group[]  @relation("GroupUsers")
+  id              Int         @id @default(autoincrement())
+  cpf             String      @db.Char(14)
+  name            String      @db.VarChar(100)
+  email           String      @unique(map:"email") @db.VarChar(255)
+  pass            String      @db.VarChar(50)
+  gender          String      @db.Char(3)
+  groups          group[]     @relation("GroupUsers")
 
 }
 
 model enterprise {
-  id        Int     @id @default(autoincrement())
-  name      String  @db.VarChar(100)
-  cnpj      String  @db.Char(14)
-  email     String  @unique(map: "email") @db.VarChar(255)
-  pass      String  @db.VarChar(255)
-  event     events[]
+  id              Int         @id @default(autoincrement())
+  name            String      @db.VarChar(100)
+  cnpj            String      @db.Char(18)
+  email           String      @unique(map: "email") @db.VarChar(255)
+  pass            String      @db.VarChar(100)
+  event           events[]
 
 }
 
 model events {
-  id        Int     @id @default(autoincrement())
-  name      String  @db.VarChar(255)
-  descricao String
-  data      DateTime  
-  local     String
-  enterpriseId Int   
-  empresa   enterprise @relation(fields: [enterpriseId], references: [id])
-  groups    group[]    @relation("GroupEvents")
+  id              Int         @id @default(autoincrement())
+  name            String      @db.VarChar(255)
+  description     String      @db.Text
+  date            DateTime
+  accessibility   String      @db.Char(3)
+  location        String      @db.VarChar(255)
+  enterpriseId    Int   
+  empresa         enterprise  @relation(fields: [enterpriseId], references: [id])
+  groups          group[]     @relation("GroupEvents")
 }
 
 model group {
-  id        Int     @id @default(autoincrement())
-  name      String  @db.VarChar(255)
-  descricao String  
-  data      DateTime
-  event     events[] @relation("GroupEvents")
-  user    users[] @relation("GroupUsers")
+  id              Int         @id @default(autoincrement())
+  name            String      @db.VarChar(255)
+  description     String      @db.Text
+  data            DateTime
+  event           events[]    @relation("GroupEvents")
+  user            users[]     @relation("GroupUsers")
 
 }
