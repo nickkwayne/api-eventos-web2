@@ -44,11 +44,11 @@ header .perfil button {
   text-align: left;
   flex-wrap: wrap;
   padding: 0 20px;
-}
+ }
 
 .cidades {
   position: absolute;
-  left: 50%;
+  left: 60%;
   transform: translateX(-50%);
   display: flex;
   gap: 8px;
