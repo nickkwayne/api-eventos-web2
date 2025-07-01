@@ -1,4 +1,4 @@
-import express from 'express'
+/*import express from 'express'
 import getUserController from '../controllers/user/getclientController.js'
 
 const router = express.Router()
@@ -6,4 +6,4 @@ const router = express.Router()
 router.get('/:id', getclientController)
 //...continua
 
-export default router
+export default router*/
