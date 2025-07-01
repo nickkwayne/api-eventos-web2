@@ -1,0 +1,192 @@
+
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.icon {
+  width: 60px;
+  height: auto;
+  max-width: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f1f5f9;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: linear-gradient(to right, #0097a7, #00796b);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  color: white;
+  font-weight: bold;
+}
+
+header nav button {
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  margin: 0 5px;
+  padding: 8px 16px;
+  font-weight: bold;
+  color: #00796b;
+  cursor: pointer;
+}
+
+header .login {
+  background-color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* Container principal */
+.main-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.seletor-de-perfil {
+  margin-bottom: 30px;
+}
+
+
+/* Ícones empresa/usuário */
+.mudar-perfil {
+  display: flex;
+  justify-content: center;
+  gap: 400px;
+  margin-bottom: 30px;
+}
+
+.mudar-perfil .perfil {
+  text-align: center;
+  cursor: pointer;
+}
+
+.mudar-perfil .perfil img {
+  width: 60px;
+  height: auto;
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+
+.mudar-perfil .perfil.ativo img {
+  filter: none;
+  opacity: 1;
+}
+
+.mudar-perfil .perfil span {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  padding: 5px 15px;
+  color: #9e9e9e;
+}
+
+.mudar-perfil .perfil.ativo span {
+  background-color: #d6d6d6;
+  color: #000;
+}
+
+/* Card de login */
+.login-card {
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  max-width: 400px;
+  width: 90%;
+}
+
+.login-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.login-card label {
+  display: block;
+  font-size: 14px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.login-card input[type="text"],
+.login-card input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+}
+
+.login-card .options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.login-card .options input {
+  margin-right: 5px;
+}
+
+.login-card button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(to right, #0097a7, #00796b);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-card .register {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.login-card .register a {
+  color: #00796b;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Rodapé */
+footer {
+  background: linear-gradient(to right, #0097a7, #00796b);
+  color: white;
+  font-size: 10px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 50px;
+}
+.hidden {
+  display: none;
+}
+.indicador-setinha {
+  width: 0;
+  height: 0;
+  margin: 10px auto 30px auto;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 20px solid #00695c;
+  transition: transform 0.3s ease;
+}
