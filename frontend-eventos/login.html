@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Litoral Meet - Login</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/login.js" defer></script>
+</head>
+<body>
+
+<!-- cabeçalho da pagina-->
+<header>
+  <div class="header-container">
+    <h1>LITORAL MEET</h1>
+    <nav class="cidades">
+      <button>Caraguatatuba</button>
+      <button>São Sebastião</button>
+      <button>Ilhabela</button>
+      <button>Ubatuba</button>
+    </nav>
+    <div class="top-bar">
+  <button class="lc-card">Login</button>
+  <button class="lc-card">Cadastro</button>
+</div>
+  </div>
+</header>
+
+
+<div class="main-container">
+  <div class="seletor-de-perfil">
+    <div class="perfil empresa ativo" onclick="selectRole('empresa')">
+      <img src="https://cdn-icons-png.flaticon.com/512/4102/4102762.png" alt="Empresa" class="icon"/>
+      <span>Empresa</span>
+    </div>
+    <div class="perfil usuario" onclick="selectRole('usuario')">
+      <img src="https://www.svgrepo.com/show/343494/profile-user-account.svg" alt="Usuário" class="icon"/>
+      <span>Usuário</span>
+    </div>
+  </div>
+
+  <div class="indicador-setinha" id="setinha"></div>
+
+  <!-- login empresa -->
+  <div class="login-card" id="form-empresa">
+    <h2>LOGIN</h2>
+    <label for="cnpj">CNPJ:</label>
+    <input type="text" id="cnpj">
+    <label for="senha-empresa">Senha:</label>
+    <input type="pass" id="senha-empresa">
+    <div class="options">
+      <label><input type="checkbox"> Mantenha Conectado</label>
+      <a href="#">Esqueceu a senha?</a>
+    </div>
+    <button>Entrar</button>
+    <div class="registro">Não tem uma conta? <a href="/frontend-eventos/cadastro.html">Cadastre-se aqui</a></div>
+
+  </div>
+
+  <!--  login usuário -->
+  <div class="login-card hidden" id="form-usuario">
+    <h2>LOGIN</h2>
+    <label for="email">Email:</label>
+    <input type="text" id="email"/>
+    <label for="senha-usuario">Senha:</label>
+    <input type="pass" id="senha-usuario" />
+    <div class="options">
+      <label><input type="checkbox"/> Mantenha Conectado</label>
+      <a href="#">Esqueceu a senha?</a>
+    </div>
+    <button>Entrar</button>
+    <div class="registro">Não tem uma conta? <a href="#">Cadastre-se aqui</a></div>
+  </div>
+</div>
+
+<!-- Rodapé -->
+<footer>
+  <p>© 2025 Litoral Meet - Termos de Uso - Política de Privacidade</p>
+</footer>
+<script>
+  function selectRole(tipo) {
+    const empresa = document.querySelector('.perfil.empresa');
+    const usuario = document.querySelector('.perfil.usuario');
+    const formEmpresa = document.getElementById('form-empresa');
+    const formUsuario = document.getElementById('form-usuario');
+    const setinha = document.getElementById('setinha');
+
+    if (tipo === 'empresa') {
+      empresa.classList.add('ativo');
+      usuario.classList.remove('ativo');
+      formEmpresa.classList.remove('hidden');
+      formUsuario.classList.add('hidden');
+      setinha.style.transform = 'translateX(-90px)';
+    } else {
+      usuario.classList.add('ativo');
+      empresa.classList.remove('ativo');
+      formUsuario.classList.remove('hidden');
+      formEmpresa.classList.add('hidden');
+      setinha.style.transform = 'translateX(90px)';
+    }
+  }
+</script>
+</body>
+</html>

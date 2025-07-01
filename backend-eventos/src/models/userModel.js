@@ -36,7 +36,7 @@ const userSchema = z.object({
   gender: z.string({
     required_error: 'O gênero é obrigatório.',
     invalid_type_error: 'O gênero deve ser um texto.'
-  }).min(1).max(3)
+  }).min(3).max(9, { message: 'O gênero deve ter entre 3 e 9 caracteres.' })
 });
 
 

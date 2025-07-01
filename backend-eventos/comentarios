@@ -1,4 +1,4 @@
-express: framework web
+ express: framework web
 cors: libera requisições de outros sites
 
 zod: validação de dados
@@ -11,3 +11,9 @@ prisma: ferramenta para gerar e configurar banco (dev dependency)
 
 npx prisma init > inicia o prisma com .env gitignore
 
+cd backend-eventos
+npm install
+npm run dev 
+
+cd backend-eventos
+dir prisma

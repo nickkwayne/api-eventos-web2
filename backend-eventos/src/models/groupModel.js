@@ -58,9 +58,10 @@ export async function remove(id) {
 
 export async function getList() {
   const result = await prisma.group.findMany({
-    include: {
-      events: true,
-      users: true
+    select: {
+      id: true,
+      name: true,
+      description: true
     }
   });
   return result;

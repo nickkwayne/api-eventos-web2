@@ -24,11 +24,10 @@ app.use('/events', eventRouter )
 app.use('/enterprises', enterpriseRouter)
 app.use('/users', userRouter)
 app.use('/groups', groupRouter)
-
 app.use('*', notFoundController)
 app.use(errorHandler)
 
 
 app.listen(port, () => {
-    console.log(`Servidor está rodando em http:localhost:${port}`)
+    console.log(`Servidor está rodando em http://localhost:${port}`)
 })

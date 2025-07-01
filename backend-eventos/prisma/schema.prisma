@@ -13,7 +13,7 @@ model users {
   name     String   @db.VarChar(100)
   email    String   @unique(map: "email") @db.VarChar(255)
   pass     String   @db.VarChar(50)
-  gender   String   @db.Char(3)
+  gender   String   @db.Char(9)
   groups   group[]  @relation("GroupMembers") // relação muitos-para-muitos
   created  group[]  @relation("GroupCreator") // grupos que usuário vai criar
 }
