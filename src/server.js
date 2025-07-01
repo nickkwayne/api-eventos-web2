@@ -1,6 +1,9 @@
 import express from 'express'
+import userRouter from './routers/userRouter.js'
 import eventRouter from './routers/eventRouter.js'
 import enterpriseRouter from './routers/enterpriseRouter.js'
+import groupRouter from './routers/groupRouter.js'
+
 
 import cors from 'cors'
 import { welcomeController } from './controllers/welcomeController.js'
@@ -19,6 +22,8 @@ app.use(express.json())
 app.get('/', welcomeController)
 app.use('/events', eventRouter )
 app.use('/enterprises', enterpriseRouter)
+app.use('/users', userRouter)
+app.use('/groups', groupRouter)
 
 app.use('*', notFoundController)
 app.use(errorHandler)

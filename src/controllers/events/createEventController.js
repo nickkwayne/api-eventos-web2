@@ -1,4 +1,3 @@
-
 import { create, eventValidator } from "../../models/eventModel.js"
 
 export default async function createEventController(req, res, next) {

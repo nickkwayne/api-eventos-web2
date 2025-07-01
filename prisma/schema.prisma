@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -14,44 +8,50 @@ datasource db {
 }
 
 model users {
-  id              Int         @id @default(autoincrement())
-  cpf             String      @db.Char(14)
-  name            String      @db.VarChar(100)
-  email           String      @unique(map:"email") @db.VarChar(255)
-  pass            String      @db.VarChar(50)
-  gender          String      @db.Char(3)
-  groups          group[]     @relation("GroupUsers")
-
+  id       Int      @id @default(autoincrement())
+  cpf      String   @db.Char(14)
+  name     String   @db.VarChar(100)
+  email    String   @unique(map: "email") @db.VarChar(255)
+  pass     String   @db.VarChar(50)
+  gender   String   @db.Char(3)
+  groups   group[]  @relation("GroupMembers") // relação muitos-para-muitos
+  created  group[]  @relation("GroupCreator") // grupos que usuário vai criar
 }
 
 model enterprise {
-  id              Int         @id @default(autoincrement())
-  name            String      @db.VarChar(100)
-  cnpj            String      @db.Char(18)
-  email           String      @unique(map: "email") @db.VarChar(255)
-  pass            String      @db.VarChar(100)
-  event           events[]
-
+  id    Int      @id @default(autoincrement())
+  name  String   @db.VarChar(100)
+  cnpj  String   @db.Char(18)
+  email String   @unique(map: "email") @db.VarChar(255)
+  pass  String   @db.VarChar(100)
+  event events[]
 }
 
 model events {
-  id              Int         @id @default(autoincrement())
-  name            String      @db.VarChar(255)
-  description     String      @db.Text
-  date            DateTime
-  accessibility   String      @db.Char(3)
-  location        String      @db.VarChar(255)
-  enterpriseId    Int   
-  empresa         enterprise  @relation(fields: [enterpriseId], references: [id])
-  groups          group[]     @relation("GroupEvents")
+  id            Int        @id @default(autoincrement())
+  name          String     @db.VarChar(255)
+  description   String     @db.Text
+  date          DateTime
+  accessibility String     @db.Char(3)
+  location      String     @db.VarChar(255)
+  enterpriseId  Int
+  empresa       enterprise @relation(fields: [enterpriseId], references: [id], onDelete: Cascade)
+  group         group[]    @relation("groupevents")
+
+  @@index([enterpriseId], map: "events_enterpriseId_fkey")
 }
 
 model group {
-  id              Int         @id @default(autoincrement())
-  name            String      @db.VarChar(255)
-  description     String      @db.Text
-  data            DateTime
-  event           events[]    @relation("GroupEvents")
-  user            users[]     @relation("GroupUsers")
+  id          Int      @id @default(autoincrement())
+  name        String   @db.VarChar(255)
+  description String   @db.Text
+  data        DateTime @default(now())
 
+  // Criar grupos
+  creatorId   Int
+  creator     users    @relation("GroupCreator", fields: [creatorId], references: [id])
+
+  // Relação com eventos e membros
+  events      events[] @relation("groupevents")
+  users       users[]  @relation("GroupMembers")
 }

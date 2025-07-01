@@ -1,18 +1,21 @@
-import { create } from "../../models/enterpriseModel.js"
+import { create, enterpriseValidator } from '../../models/enterpriseModel.js'
 
-export default async function createenterpriseController(req, res, next) {
+export default async function createEnterpriseController(req, res, next) {
     try {
         const enterprise = req.body
-
-        // Comentar a validação para não usar
-        // const { success, error, data: eventsValidated } = eventValidator(event)
-
-        // Passar diretamente o evento sem validação
-        const result = await create(enterprise)  // Usar `event` diretamente, sem validação
-
+        const {success, error, data: enterpriseValidated} =
+        enterpriseValidator(enterprise, {id: true})
+        if(!success){
+            return res.status(400).json({
+                message: 'Erro ao cadastrar empresa, verifique seus dados e tente novamente !!',
+                errors: error.flatten().fieldErrors
+            })
+        }
+    
+        const result = await create(enterpriseValidated) 
         return res.json({
-            message: "Cadastro de empresa criado com sucesso !!",
-            property: result
+            message: "Empresa cadastrada com sucesso !!",
+            enterprise: result
         })
     } catch (error) {
         next(error)
